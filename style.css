@@ -118,7 +118,8 @@ body{
 .page{
 
 	position: relative;
-	top: 65px;
+	/*top: 65px;*/
+
 }
 
 .ensemble-logo{
@@ -202,11 +203,14 @@ body{
 .fond-image{
 
 	background: url("https://lescarsmartin.pprod.fr/wp-content/uploads/2021/02/cars-martin-activite-1920x0-c-default.jpg");
-	height: 655px;
+	height: 665px;
 	background-position: -200px 0px;
 	display: flex;
 	justify-content: flex-end;
 	animation: image-fond 15s infinite;
+	position: relative;
+	top: 65px;
+	margin-bottom: 65px;
 
 }
 
@@ -257,6 +261,7 @@ body{
 .ensemble-icone-info{
 
 	position: relative;
+	top: 100px;
 	width: 100px;
 	height: 261px;
 	margin: 25px 15px 20px 0px;
@@ -984,5 +989,33 @@ footer{
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+
+}
+
+.app-prog{
+
+	opacity: 0;
+	transition: 1s;
+
+}
+
+.app-prog-visible{
+
+	opacity: 1;
+	transition: 1s;
+
+}
+
+.deplacement{
+
+	transform: translateY(0);
+	transition: 1s;
+
+}
+
+.deplacement-visible{
+
+	transform: translateY(-150px);
+	transition: 1s;
 
 }

@@ -1,3 +1,54 @@
+const ratio = .2;
+
+const options = {
+
+	root: null,
+	rootMargin: '0px',
+	threshold: ratio
+
+}
+
+const handleIntersect = function(entries, observer){
+	entries.forEach(function (entry){
+		if (entry.intersectionRatio > ratio){
+			entry.target.classList.add('app-prog-visible')
+			observer.observe(entry.target)
+		}else if(entry.intersectionRatio < ratio){
+			entry.target.classList.remove('app-prog-visible')
+			observer.observe(entry.target)
+		}
+	})
+}
+
+
+const observer = new IntersectionObserver(handleIntersect,options);
+document.querySelectorAll('.app-prog').forEach(function (r) {
+
+	observer.observe(r)
+
+})
+
+const fonctiontest = function(entries, test){
+	entries.forEach(function (entry){
+		if (entry.intersectionRatio > ratio){
+			entry.target.classList.add('deplacement-visible')
+			test.observe(entry.target)
+		}else if(entry.intersectionRatio < ratio){
+			entry.target.classList.remove('deplacement-visible')
+			test.observe(entry.target)
+		}
+	})
+}
+
+
+const test = new IntersectionObserver(fonctiontest,options);
+document.querySelectorAll('.deplacement').forEach(function (r) {
+
+	test.observe(r)
+
+})
+
+
 $('.bouton-menu').click(function(){
 
 	if($('.un').css('opacity')==='1'){
@@ -53,3 +104,6 @@ $('.bouton-menu').hover(function(){
 
 
 });
+
+
+
