@@ -5,7 +5,6 @@ const options = {
 	root: null,
 	rootMargin: '0px',
 	threshold: ratio
-
 }
 
 const handleIntersect = function(entries, observer){
@@ -19,7 +18,6 @@ const handleIntersect = function(entries, observer){
 		}
 	})
 }
-
 
 const observer = new IntersectionObserver(handleIntersect,options);
 document.querySelectorAll('.app-prog').forEach(function (r) {
@@ -40,14 +38,12 @@ const fonctiontest = function(entries, test){
 	})
 }
 
-
 const test = new IntersectionObserver(fonctiontest,options);
-document.querySelectorAll('.deplacement').forEach(function (r) {
+document.querySelectorAll('[class*="deplacement-"]').forEach(function (r) {
 
 	test.observe(r)
 
 })
-
 
 $('.bouton-menu').click(function(){
 
@@ -77,7 +73,6 @@ $('.bouton-menu').click(function(){
 
 });
 
-
 $('.bouton-menu').hover(function(){
 
 	if($('.un').css('opacity')==='1'){
@@ -88,7 +83,6 @@ $('.bouton-menu').hover(function(){
 		$('.bouton-menu').css('cursor','pointer');
 
 		alert($('.rond').scrollbottom() + " px");
-
 	}
 
 },function(){
@@ -99,11 +93,6 @@ $('.bouton-menu').hover(function(){
 		$('.barre').css('background-color','#86bc24');
 		$('.bouton-menu p').css('color','#86bc24');
 		$('.bouton-menu').css('cursor','normal');
-
 	}
 
-
 });
-
-
-

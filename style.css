@@ -403,12 +403,6 @@ body{
 
 }
 
-.total-article{
-
-	height: 600px;
-
-}
-
 article{
 
 	width: 320px;
@@ -473,11 +467,10 @@ article h2::selection{
 
 	width: 100%;
 	position: relative;
-	/*top: -100px;*/
 	display: flex;
 	flex-direction: column;
 	height: 1050px;
-	justify-content: space-between;
+	justify-content: space-around;
 
 }
 
@@ -490,6 +483,12 @@ article h2::selection{
 
 }
 
+.ensemble-article{
+
+	display: flex;
+
+}
+
 .logo-fin-rect{
 
 	width: 130px;
@@ -499,17 +498,12 @@ article h2::selection{
 
 }
 
-.app-prog{
-
-	opacity: 1;
-
-}
-
 .fin-rect{
 
 	width: 100%;
-	height: 150px;
+	height: 80px;
 	display: flex;
+	margin-bottom: 40px;
 	justify-content: center;
 	align-items: center;
 
@@ -855,7 +849,6 @@ footer{
 
 	height: 740px;
 	background-color: #ececec;
-
 }
 
 .ens-footer{
@@ -975,7 +968,6 @@ footer{
 	font-weight: 400;
 	margin: 0 0 25px 0;
 
-
 }
 
 .mention-leg p{
@@ -1006,16 +998,27 @@ footer{
 
 }
 
-.deplacement{
+[class*=".deplacement-"]{
 
 	transform: translateY(0);
-	transition: 1s;
+	/*transition: 1s;*/
+
+}
+
+.deplacement-2{
+
+	transition-delay: .1s;
+
+}
+
+.deplacement-3{
+
+	transition-delay: .2s;
 
 }
 
 .deplacement-visible{
 
-	transform: translateY(-150px);
-	transition: 1s;
-
+	transform: translateY(-100px);
+	/*transition: .5s;*/
 }
