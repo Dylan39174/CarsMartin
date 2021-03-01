@@ -1,4 +1,5 @@
 const ratio = .2;
+var position = $(window).scrollTop();
 
 const options = {
 
@@ -9,10 +10,9 @@ const options = {
 
 const handleIntersect = function(entries, observer){
 	entries.forEach(function (entry){
-		if (entry.intersectionRatio > ratio){
+		if (entry.intersectionRatio > ratio && direction == 1){
 			entry.target.classList.add('app-prog-visible')
-			observer.observe(entry.target)
-		}else if(entry.intersectionRatio < ratio){
+		}else if(entry.intersectionRatio < ratio && direction == -1){
 			entry.target.classList.remove('app-prog-visible')
 			observer.observe(entry.target)
 		}
@@ -26,12 +26,67 @@ document.querySelectorAll('.app-prog').forEach(function (r) {
 
 })
 
+
+var position = $(window).scrollTop(); 
+var direction = 0;
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if(scroll > position) {
+        console.log('scrollDown');
+      
+        direction = 1
+
+
+    } else {
+         console.log('scrollUp');
+
+         direction = -1
+     
+    }
+    position = scroll;
+});
+
+
 const fonctiontest = function(entries, test){
 	entries.forEach(function (entry){
-		if (entry.intersectionRatio > ratio){
+		if (entry.intersectionRatio > ratio && direction == 1){
 			entry.target.classList.add('deplacement-visible')
 			test.observe(entry.target)
-		}else if(entry.intersectionRatio < ratio){
+
+			if($('body').width() > 575 && $('body').width() < 992){
+
+				$('.N3').addClass('deplacement-1')
+				$('.N3').removeClass('deplacement-3')
+				$('.N5').addClass('deplacement-1')
+				$('.N5').removeClass('deplacement-2')
+				$('.N9').addClass('deplacement-1')
+				$('.N9').removeClass('deplacement-3')
+
+				$('.N4').addClass('deplacement-2')
+				$('.N4').removeClass('deplacement-1')
+
+				$('.N6').addClass('deplacement-2')
+				$('.N6').removeClass('deplacement-3')
+
+			}else{
+
+				$('.N3').addClass('deplacement-3')
+				$('.N3').removeClass('deplacement-1')
+				$('.N5').addClass('deplacement-2')
+				$('.N5').removeClass('deplacement-1')
+				$('.N9').addClass('deplacement-3')
+				$('.N9').removeClass('deplacement-1')
+
+				$('.N4').addClass('deplacement-1')
+				$('.N4').removeClass('deplacement-2')
+
+				$('.N6').addClass('deplacement-3')
+				$('.N6').removeClass('deplacement-2')
+
+			};
+
+		}else if(entry.intersectionRatio < ratio && direction == -1){
 			entry.target.classList.remove('deplacement-visible')
 			test.observe(entry.target)
 		}
@@ -82,7 +137,6 @@ $('.bouton-menu').hover(function(){
 		$('.bouton-menu p').css('color','white');
 		$('.bouton-menu').css('cursor','pointer');
 
-		alert($('.rond').scrollbottom() + " px");
 	}
 
 },function(){
@@ -96,3 +150,5 @@ $('.bouton-menu').hover(function(){
 	}
 
 });
+
+
