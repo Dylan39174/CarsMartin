@@ -26,27 +26,22 @@ document.querySelectorAll('.app-prog').forEach(function (r) {
 
 })
 
-
 var position = $(window).scrollTop(); 
 var direction = 0;
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
     if(scroll > position) {
-        console.log('scrollDown');
       
         direction = 1
 
-
     } else {
-         console.log('scrollUp');
 
          direction = -1
      
     }
     position = scroll;
 });
-
 
 const fonctiontest = function(entries, test){
 	entries.forEach(function (entry){
@@ -115,7 +110,7 @@ $('.bouton-menu').click(function(){
 
 	}else if($('.un').css('opacity')==='0'){
 
-		$('.menu').css('top', '-100%');
+		$('.menu').css('top', '-200%');
 		$('.un').css('transform','translateY(0)');
 		$('.un').css('opacity', '1');
 		$('.bouton-menu').css('background-color', 'white');

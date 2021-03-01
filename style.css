@@ -1808,8 +1808,6 @@ article{
 
 }
 
-
-
 .rect-1{
 
 	position: relative;
@@ -1884,7 +1882,6 @@ article{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
 
 }
 
@@ -1981,7 +1978,6 @@ footer{
 	display: flex;
 	flex-direction: column;
 
-
 }
 
 .img-footer{
@@ -2037,7 +2033,6 @@ footer{
 	text-align: center;
 
 }
-
 }
 
 .app-prog{
@@ -2060,7 +2055,6 @@ footer{
 	transition: 1s;
 
 }
-
 
 .deplacement-2{
 
