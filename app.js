@@ -10,9 +10,9 @@ const options = {
 
 const handleIntersect = function(entries, observer){
 	entries.forEach(function (entry){
-		if (entry.intersectionRatio > ratio && direction == 1){
+		if (entry.intersectionRatio > ratio){
 			entry.target.classList.add('app-prog-visible')
-		}else if(entry.intersectionRatio < ratio && direction == -1){
+		}else if(entry.intersectionRatio < ratio &&){
 			entry.target.classList.remove('app-prog-visible')
 			observer.observe(entry.target)
 		}
@@ -50,7 +50,7 @@ $(window).scroll(function() {
 
 const fonctiontest = function(entries, test){
 	entries.forEach(function (entry){
-		if (entry.intersectionRatio > ratio && direction == 1){
+		if (entry.intersectionRatio > ratio &&){
 			entry.target.classList.add('deplacement-visible')
 			test.observe(entry.target)
 
@@ -86,7 +86,7 @@ const fonctiontest = function(entries, test){
 
 			};
 
-		}else if(entry.intersectionRatio < ratio && direction == -1){
+		}else if(entry.intersectionRatio < ratio){
 			entry.target.classList.remove('deplacement-visible')
 			test.observe(entry.target)
 		}
