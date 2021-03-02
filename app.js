@@ -147,3 +147,8 @@ $('.bouton-menu').hover(function(){
 });
 
 
+$('.rond').click(function(){
+
+	$('html,body').animate({scrollTop : $('.prestation').offset().top - 90});
+
+});

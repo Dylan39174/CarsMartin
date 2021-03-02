@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 @keyframes fleche{
 
 	0%{
 
-		top: 170px;
+		top: 220px;
 
 	}
 
 	50%{
 
-		top: 200px;
+		top: 250px;
 
 	}
 
 	100%{
 
-		top: 170px;
-
+		top: 220px;
+		
 	}
 
 }
@@ -63,10 +64,113 @@
 
 }
 
+@keyframes chargement_logo{
+
+	from{top: -200px;}
+	to{top: 0px;}
+
+}
+
+@keyframes chargement-menu{
+
+	from{top: -200px;}
+	to{top: 10px;}
+
+}
+
+@keyframes chargement_page{
+
+	0%{
+
+		opacity: 0;
+
+	}
+
+	60%{
+
+		opacity: 0;
+
+	}
+
+	100%{
+
+		opacity: 1;
+
+	}
+
+}
+
+@keyframes chargement_logo_central{
+
+
+	from{
+
+		opacity: 1;
+		transform: scale(1);
+
+	}
+
+	to{
+
+		opacity: 0;
+		transform: scale(1.5);
+		display: none;
+
+	}
+
+}
+
 html,body{
 
 	width: 100%;
 	height: 100%;
+
+}
+
+.choix-bus h2::selection,
+.titre h1::selection,
+.text-bus p::selection,
+.menu nav ul li::selection{
+
+	user-select: none;
+
+}
+
+.logo-fin-rect::selection,
+.rect-2 p::selection,
+.rects-2 p::selection,
+.choix-ens-icon-text img::selection,
+.rect-cont-icon h2::selection,
+.experience h2::selection,
+.experience h2 span::selection,
+.ens-img-texte img::selection,
+.pink-part-text p::selection,
+.pink-part-text span::selection,
+.pink-part img::selection,
+.titre-footer h4::selection,
+.rectss-2 p::selection,
+.contact p::selection,
+.contact span::selection,
+.mention-leg h4::selection,
+.mention-leg p::selection,
+.icon p::selection,
+.mention-leg span::selection,
+.pink-part-text a::selection,
+.contact a::selection,
+.exp-text h3::selection,
+.exp-text p::selection,
+.bas-img-footer p::selection,
+.logo-footer img::selection{
+
+	background-color: #86bc24; 
+	color: white;
+
+}
+
+.titre h1 span::selection,
+.choix-bus h2 span::selection{
+
+	color: white;
 
 }
 
@@ -130,6 +234,15 @@ body{
 	font-family: 'Montserrat', sans-serif;
 
 }
+
+.page{
+
+	opacity: 0;
+	animation: chargement_page 2.5s forwards;
+
+}
+
+
 header{
 
 	position: relative;
@@ -137,16 +250,10 @@ header{
 
 }
 
-.page{
-
-	position: relative;
-	/*top: 65px;*/
-
-}
-
 .logo1{
 
 	position: fixed;
+	top: -200px;
 	width: 100%;
 	height: 80px;
 	padding-top: 10px;
@@ -157,12 +264,15 @@ header{
 	margin: 0;
 	z-index: 2;
 	background-color: white;
+	animation: chargement_logo 1.5s forwards;
+	animation-delay: 1.5s;
 
 }
 
 .logo2{
 
 	position: fixed;
+	top: -200px;
 	align-items: flex-end;
 	display: flex;
 	margin-right: 20px;
@@ -170,25 +280,50 @@ header{
 	width: 88%;
 	height: 80px;
 	z-index: 3;
+	animation: chargement_logo 1.5s forwards;
+	animation-delay: 1.5s;
+}
+
+.logo_charg{
+
+	position: fixed;
+	width: 250px;
+	height: 150px;
+	top: 50%;
+	left: 43%;
+	padding-top: 10px;
+	text-align: right;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	z-index: 2;
+	background: url('https://lescarsmartin.pprod.fr/wp-content/uploads/2021/02/logo-cars-martin.svg');
+	background-repeat: no-repeat;
+	animation: chargement_logo_central 1s forwards;
+	animation-delay: 1s;
+
 }
 
 .bouton-menu{
 
 	position: fixed;
-	top: 10px;
+	top: -200px;
+	left: calc(100% - 70px);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	width: 50px;
 	height: 63px;
-	z-index: 10;
 	background-color: white;
 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 30%), 
 	0 2px 4px -1px rgb(0 0 0 / 36%);
 	text-align: center;
 	align-items: center;
-	margin-right: 20px;
+	z-index: 20;
 	transition: .3s;
+	animation: chargement-menu 1.5s forwards;
+	animation-delay: 1.5s;
 }
 
 .bouton-menu p{
@@ -260,8 +395,10 @@ header{
 	animation-delay: .5s;
 	transition: .5s;
 	z-index: 1;
+	transform: rotateX();
 
 }
+
 
 .rond:hover{
 
@@ -282,15 +419,19 @@ header{
 	top: 100px;
 	width: 100px;
 	height: 261px;
+	left: calc(100% - 115px);
 	margin: 25px 15px 20px 0px;
 	position: fixed;
 	z-index: 1;
+	animation: chargement_page 2.5s forwards;
 
 }
 
 .icon{
 
 	border-radius: 10px;
+
+	z-index: 40;
 	text-align: center;
 	padding-top: 15px;
 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 30%), 
@@ -804,7 +945,7 @@ article h2{
 
 }
 
-.pink-part-text p{
+.pink-part-text p, .pink-part-text a{
 
 	color: #e8338b;
 	font-weight: 700;
@@ -813,6 +954,12 @@ article h2{
 	line-height: 1.55;
 	margin: 0;
 	padding: 0;
+
+}
+
+.pink-part-text a:hover{
+
+	color: #706F6F;
 
 }
 
@@ -828,6 +975,44 @@ article h2{
 	display: flex;
 	align-items: center;
 	margin-top: 15px;
+
+}
+
+.icon-part-pink a{
+
+	color: #e8338b;
+	font-weight: 700;
+	font-size: 17px;
+	text-align: left;
+	line-height: 1.55;
+	margin: 0;
+	padding: 0;;
+
+}
+
+.icon-part-pink:hover{
+
+	cursor: pointer;
+
+}
+
+.icon-part-pink:hover .rond-pink{
+
+	border: 4px solid #706F6F;
+
+}
+
+.icon-part-pink:hover svg .arrow-left{
+
+	fill: #706F6F;
+
+}
+
+.icon-part-pink:hover .rond-pink svg,
+.icon-part-pink:hover a{
+
+	color: #706F6F;
+
 
 }
 
@@ -936,7 +1121,7 @@ footer{
 
 }
 
-.contact p{
+.contact p, .contact a{
 
 	color: #706f6f;
 	font-weight: 600;
@@ -946,7 +1131,13 @@ footer{
 
 }
 
-.contact span, .mention-leg span{
+.contact a{
+
+	text-decoration: none;
+
+}
+
+.contact a, .mention-leg span{
 
 	transition: .3s;
 	border-bottom: 1px solid #ececec;
@@ -954,7 +1145,7 @@ footer{
 
 }
 
-.contact span:hover, .mention-leg span:hover{
+.contact a:hover, .mention-leg span:hover{
 
 	cursor: pointer;
 	color: #86bc24;
@@ -971,10 +1162,7 @@ footer{
 	font-size: 19px;
 	line-height: 1.55;
 
-
 }
-
-
 
 .mention-leg h4{
 
@@ -1037,6 +1225,14 @@ article{
 
 	position: fixed;
 	width: 93%;
+
+}
+
+.img-footer{
+
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
 
 }
 
@@ -1191,6 +1387,12 @@ article{
 
 }
 
+.contact{
+
+	text-align: center;
+
+}
+
 .contact p{
 
 	text-align: center;
@@ -1257,6 +1459,12 @@ article{
 	position: relative;
 	width: 240px;
 	height: 290px;
+
+}
+
+.logo_charg{
+
+	left: 38%;
 
 }
 
@@ -1329,6 +1537,7 @@ article{
 
 	position: relative;
 	top: 91%;
+	left: 0;
 	display: flex;
 	width: 100%;
 	height: 60px;
@@ -1529,6 +1738,12 @@ article{
 
 }
 
+ .pink-part-text a{
+
+ 	text-align: center;
+
+ }
+
 .pink-part img{
 
 	object-fit: cover;
@@ -1607,8 +1822,11 @@ article{
 .contact{
 
 	margin-top: 25px;
+	text-align: center;
 
 }
+
+
 
 .mention-leg{
 
@@ -1627,6 +1845,8 @@ article{
 	text-align: center;
 
 }
+
+
 
 .titre-footer, .contact, .mention-leg, .logo-footer{
 
@@ -1737,6 +1957,7 @@ article{
 
 		position: relative;
 		top: 92%;
+		left: 0;
 		display: flex;
 		width: 100%;
 		height: 30px;
@@ -1771,6 +1992,12 @@ article{
 .picto{
 
 	width: 0px;
+
+}
+
+.logo_charg{
+
+	left: 20%;
 
 }
 
@@ -1954,6 +2181,12 @@ article{
 
 }
 
+.pink-part-text{
+
+	text-align: center;
+
+}
+
 .pink-part-text p{
 
 	text-align: center;
@@ -1961,7 +2194,6 @@ article{
 }
 
 footer{
-
 
 	height: 1200px;
 
@@ -2010,6 +2242,11 @@ footer{
 }
 
 .contact p{
+
+	text-align: center;
+
+}
+.contact{
 
 	text-align: center;
 
